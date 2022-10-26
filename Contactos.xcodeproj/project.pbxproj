@@ -17,6 +17,8 @@
 		3D1B947E2906E7A200B5F825 /* Contactos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B947D2906E7A200B5F825 /* Contactos.swift */; };
 		3D1B94802906E82500B5F825 /* ContactosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B947F2906E82500B5F825 /* ContactosController.swift */; };
 		3D1B94822906EA3400B5F825 /* CeldaContactoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B94812906EA3400B5F825 /* CeldaContactoController.swift */; };
+		3D427C4029097A770056BBDA /* EditarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D427C3F29097A770056BBDA /* EditarController.swift */; };
+		3D427C422909812E0056BBDA /* NuevoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D427C412909812E0056BBDA /* NuevoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		3D1B947D2906E7A200B5F825 /* Contactos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactos.swift; sourceTree = "<group>"; };
 		3D1B947F2906E82500B5F825 /* ContactosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosController.swift; sourceTree = "<group>"; };
 		3D1B94812906EA3400B5F825 /* CeldaContactoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaContactoController.swift; sourceTree = "<group>"; };
+		3D427C3F29097A770056BBDA /* EditarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarController.swift; sourceTree = "<group>"; };
+		3D427C412909812E0056BBDA /* NuevoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 			children = (
 				3D1B947F2906E82500B5F825 /* ContactosController.swift */,
 				3D1B94812906EA3400B5F825 /* CeldaContactoController.swift */,
+				3D427C3F29097A770056BBDA /* EditarController.swift */,
+				3D427C412909812E0056BBDA /* NuevoController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -307,9 +313,11 @@
 			files = (
 				3D1B94822906EA3400B5F825 /* CeldaContactoController.swift in Sources */,
 				3D1B947E2906E7A200B5F825 /* Contactos.swift in Sources */,
+				3D427C4029097A770056BBDA /* EditarController.swift in Sources */,
 				3D1B94482906E37200B5F825 /* AppDelegate.swift in Sources */,
 				3D1B94802906E82500B5F825 /* ContactosController.swift in Sources */,
 				3D1B944A2906E37200B5F825 /* SceneDelegate.swift in Sources */,
+				3D427C422909812E0056BBDA /* NuevoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

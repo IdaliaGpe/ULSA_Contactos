@@ -35,36 +35,37 @@
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaContacto" rowHeight="47" id="aJz-sq-5Wy" customClass="CeldaContactoController" customModule="Contactos" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaContacto" rowHeight="51" id="aJz-sq-5Wy" customClass="CeldaContactoController" customModule="Contactos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJz-sq-5Wy" id="4do-q7-L4v">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="47"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyL-le-Q7P">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="21"/>
+                                                    <rect key="frame" x="0.0" y="3" width="62" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numero" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4E-Wz-0Ly">
-                                                    <rect key="frame" x="0.0" y="26" width="45" height="15"/>
+                                                    <rect key="frame" x="0.0" y="29" width="45" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gyL-le-Q7P" firstAttribute="top" secondItem="4do-q7-L4v" secondAttribute="top" constant="3" id="A2x-7C-gir"/>
                                                 <constraint firstItem="gyL-le-Q7P" firstAttribute="leading" secondItem="4do-q7-L4v" secondAttribute="leading" id="MB3-AD-lv6"/>
                                                 <constraint firstItem="t4E-Wz-0Ly" firstAttribute="top" secondItem="gyL-le-Q7P" secondAttribute="bottom" constant="5" id="Vuc-s1-eQ2"/>
                                                 <constraint firstItem="t4E-Wz-0Ly" firstAttribute="leading" secondItem="4do-q7-L4v" secondAttribute="leading" id="oQP-RG-Qg5"/>
-                                                <constraint firstItem="gyL-le-Q7P" firstAttribute="top" secondItem="4do-q7-L4v" secondAttribute="top" id="xEM-Q5-P2L"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblNombre" destination="gyL-le-Q7P" id="xcB-01-eoM"/>
                                             <outlet property="lblNumero" destination="t4E-Wz-0Ly" id="ifT-j8-pFt"/>
+                                            <segue destination="aeq-BE-bjL" kind="show" identifier="goToEditar" id="VKK-as-ffN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -84,11 +85,14 @@
                         <viewLayoutGuide key="safeArea" id="d4q-1a-lQW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contacto" id="O0I-4l-gOV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8cG-6u-UJU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8cG-6u-UJU">
+                            <connections>
+                                <segue destination="HgU-c6-lYP" kind="show" identifier="goToNuevo" id="z0m-9j-f5S"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="HgU-c6-lYP" kind="show" identifier="goToAgregar" id="hOU-Bo-oCK"/>
-                        <segue destination="aeq-BE-bjL" kind="show" identifier="goToEditar" id="VSc-8A-y9R"/>
+                        <outlet property="tvContactos" destination="Ggd-R7-WiN" id="wja-iC-tR3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NiE-wp-MKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -98,7 +102,7 @@
         <!--Editar Contacto-->
         <scene sceneID="pnl-V8-CLq">
             <objects>
-                <viewController id="aeq-BE-bjL" sceneMemberID="viewController">
+                <viewController id="aeq-BE-bjL" customClass="EditarController" customModule="Contactos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6s-kM-3Rz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +132,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CP-aF-aOP">
                                 <rect key="frame" x="326" y="275" width="68" height="30"/>
                                 <state key="normal" title="Actualizar"/>
+                                <connections>
+                                    <action selector="doToActualizar:" destination="aeq-BE-bjL" eventType="touchUpInside" id="cgU-Pi-urQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -148,6 +155,10 @@
                         <viewLayoutGuide key="safeArea" id="0sC-nE-pxR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Editar Contacto" id="ihl-OZ-Gyx"/>
+                    <connections>
+                        <outlet property="txtNombre" destination="bEz-lc-3Ac" id="Jdw-CM-aCo"/>
+                        <outlet property="txtNumero" destination="nCn-KQ-UmH" id="xsD-5e-0vZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLc-rZ-y7t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,7 +167,7 @@
         <!--Agregar Contacto-->
         <scene sceneID="N3H-NO-GXI">
             <objects>
-                <viewController id="HgU-c6-lYP" sceneMemberID="viewController">
+                <viewController id="HgU-c6-lYP" customClass="NuevoController" customModule="Contactos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ze2-iB-BBb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,6 +197,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tds-xI-Omy">
                                 <rect key="frame" x="339" y="275" width="55" height="30"/>
                                 <state key="normal" title="Agregar"/>
+                                <connections>
+                                    <action selector="doTapNuevo:" destination="HgU-c6-lYP" eventType="touchUpInside" id="Ua6-oD-hWj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -207,6 +221,10 @@
                         <viewLayoutGuide key="safeArea" id="FP4-Me-uUT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Agregar Contacto" id="b5L-km-34p"/>
+                    <connections>
+                        <outlet property="txtNombre" destination="Scs-Jh-4MQ" id="6s1-JU-lqp"/>
+                        <outlet property="txtNumero" destination="X7O-Of-w4W" id="6gM-4d-LN8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXe-tR-ePz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
